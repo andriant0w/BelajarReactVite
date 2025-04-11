@@ -10,26 +10,26 @@ function Home() {
   return (
     <div>
       {/* Hero - konten */}
-      <div className="container my-5">
-        <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-          <div className="col-lg-6 p-3 p-lg-5 pt-lg-3">
-            <h1 className="display-4 fw-bold lh-1">Welcome to Our Bookstore</h1>
-            <p className="lead">
-              Discover a wide range of books from various genres, including fiction, non-fiction, self-help, and more. 
-              Whether you're looking for the latest bestsellers or timeless classics, we have something for every reader.
-            </p>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Browse Books</button>
-              <button type="button" className="btn btn-outline-secondary btn-lg px-4">Contact Us</button>
+        <div className="container my-5">
+          <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div className="col-lg-6 p-3 p-lg-5 pt-lg-3">
+          <h1 className="display-4 fw-bold lh-1">Sapiens - Yuval Noah Harari</h1>
+          <p className="lead">
+            A brief history of humankind. This book explores the journey of our species from the Stone Age to the modern era, 
+            examining how biology and history have defined us and enhanced our understanding of what it means to be human.
+          </p>
+          <div className="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+            <button type="button" className="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Browse Books</button>
+            <button type="button" className="btn btn-outline-secondary btn-lg px-4">Contact Us</button>
+          </div>
+            </div>
+            <div className="col-lg-6 p-4 overflow-hidden d-flex justify-content-center align-items-center">
+          <img className="rounded-lg-3 img-fluid " src={sapiensCover} alt="Bookstore Hero" />
             </div>
           </div>
-          <div className="col-lg-6 p-4 overflow-hidden d-flex justify-content-center align-items-center">
-            <img className="rounded-lg-3 img-fluid " src={sapiensCover} alt="Bookstore Hero" />
-          </div>
         </div>
-      </div>
 
-      {/* produk list */}
+        {/* produk list */}
       <section className="py-5 text-center container">
         <div className="row py-lg-5">
           <div className="col-lg-6 col-md-8 mx-auto">
