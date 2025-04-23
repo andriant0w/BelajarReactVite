@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AddBookForm from './AddBookForm';
+
 import GO1984koper from '../assets/books/1984.jpg';
 import AtomicHabitkoper from '../assets/books/AtomicHabit.jpg';
 import sapienskoper from '../assets/books/sapiens.jpeg';
@@ -7,9 +9,22 @@ import toKillAMockingbirdkoper from '../assets/books/TKAM.jpeg';
 import theSubtleArtkoper from '../assets/books/TSAONGAF.jpeg';
 
 function Book() {
+  const [books, setBooks] = useState([
+    { title: "Sapiens", description: "A brief history of humankind.", cover: sapienskoper },
+    { title: "Atomic Habits", description: "An easy & proven way to build good habits.", cover: AtomicHabitkoper },
+    { title: "The Alchemist", description: "A journey of self-discovery.", cover: theAlchemistkoper },
+    { title: "1984", description: "A dystopian novel by George Orwell.", cover: GO1984koper },
+    { title: "To Kill a Mockingbird", description: "A classic novel of racism and injustice.", cover: toKillAMockingbirdkoper },
+    { title: "The Subtle Art of Not Giving a F*ck", description: "A counterintuitive approach to living a good life.", cover: theSubtleArtkoper }
+  ]);
+
+  // Fungsi untuk menambah buku
+  const handleAddBook = (newBook) => {
+    setBooks([newBook, ...books]); // Tambah buku baru ke depan list
+  };
+
   return (
-      <>
-        {/* produk list */}
+    <>
       <section className="py-5 text-center container">
         <div className="row py-lg-5">
           <div className="col-lg-6 col-md-8 mx-auto">
@@ -19,17 +34,14 @@ function Book() {
         </div>
       </section>
 
+      {/* Tambah Buku */}
+      <AddBookForm onAddBook={handleAddBook} />
+
+      {/* List Buku */}
       <div className="album py-5 bg-body-tertiary">
         <div className="container">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {[
-              { title: "Sapiens", description: "A brief history of humankind.", cover: sapienskoper },
-              { title: "Atomic Habits", description: "An easy & proven way to build good habits.", cover: AtomicHabitkoper },
-              { title: "The Alchemist", description: "A journey of self-discovery.", cover: theAlchemistkoper },
-              { title: "1984", description: "A dystopian novel by George Orwell.", cover: GO1984koper },
-              { title: "To Kill a Mockingbird", description: "A classic novel of racism and injustice.", cover: toKillAMockingbirdkoper },
-              { title: "The Subtle Art of Not Giving a F*ck", description: "A counterintuitive approach to living a good life.", cover: theSubtleArtkoper }
-            ].map((book, index) => (
+            {books.map((book, index) => (
               <div className="col" key={index}>
                 <div className="card shadow-sm">
                   <img className="bd-placeholder-img card-img-top" src={book.cover} alt={book.title} />
@@ -50,7 +62,7 @@ function Book() {
           </div>
         </div>
       </div>
-      </>
+    </>
   );
 }
 
